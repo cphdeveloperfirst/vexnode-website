@@ -180,12 +180,16 @@ section {
 
 .hero-overline {
   font-family: 'Orbitron', monospace;
-  font-size: clamp(0.7rem, 1.2vw, 0.85rem);
-  font-weight: 600;
-  letter-spacing: 0.35em;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--blue);
-  margin-bottom: 24px;
+  background: linear-gradient(135deg, var(--blue), var(--purple), var(--magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 30px rgba(77,166,255,.3)) drop-shadow(0 0 60px rgba(139,92,246,.2));
+  margin-bottom: 16px;
   opacity: 0;
   animation: fadeUp 1s 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
