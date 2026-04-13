@@ -163,13 +163,14 @@ section{padding:140px 0;position:relative}
 }
 
 .scroll-ind{
-  position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
+  position:absolute;bottom:40px;left:0;right:0;
   display:flex;flex-direction:column;align-items:center;gap:14px;
   font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);
-  opacity:0;animation:fadeUp 1s var(--ease) 1.2s forwards;
+  opacity:0;animation:fadeInOnly 1s var(--ease) 1.2s forwards;
 }
-.scroll-ind .bar{width:1px;height:52px;background:linear-gradient(to bottom,transparent,#fff,transparent);animation:scrollBar 2.4s ease-in-out infinite}
-@keyframes scrollBar{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+.scroll-ind .bar{width:1px;height:52px;background:linear-gradient(to bottom,transparent,#fff,transparent);animation:scrollBar 2.4s ease-in-out infinite;transform-origin:top}
+@keyframes scrollBar{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
+@keyframes fadeInOnly{to{opacity:1}}
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 
 /* ==== REVEAL ==== */
@@ -359,12 +360,21 @@ section{padding:140px 0;position:relative}
 
 /* ==== FOOTER ==== */
 footer{
-  padding:50px 32px;border-top:1px solid var(--line);
-  display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+  padding:80px 32px 40px;border-top:1px solid var(--line);
   font-size:13px;color:var(--mute);
 }
-footer .brand{font-size:13px}
-footer .links{display:flex;gap:24px}
+footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;max-width:var(--max);margin:0 auto 56px}
+@media(max-width:720px){footer{padding:56px 22px 32px}footer .wrap{grid-template-columns:1fr;gap:32px;margin-bottom:40px}}
+footer .col h4{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#fff;margin-bottom:18px}
+footer .col p,footer .col a{color:var(--mute);display:block;margin-bottom:8px;font-size:13px;line-height:1.7;transition:color .3s}
+footer .col a:hover{color:#fff}
+footer .legal{font-size:12px;line-height:1.7;color:var(--mute)}
+footer .legal strong{color:rgba(255,255,255,.75);font-weight:500;display:block;margin-bottom:8px;font-family:'Space Grotesk',sans-serif;letter-spacing:.06em}
+footer .bottom{border-top:1px solid var(--line);padding-top:28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;max-width:var(--max);margin:0 auto}
+footer .bottom .brand{font-size:12px;letter-spacing:.2em;display:flex;align-items:center;gap:10px}
+footer .bottom .links{display:flex;gap:24px;font-size:12px}
+footer .bottom .links a{color:var(--mute);transition:color .3s}
+footer .bottom .links a:hover{color:#fff}
 
 /* ==== CURSOR ==== */
 .cursor{position:fixed;top:0;left:0;width:28px;height:28px;border:1.5px solid rgba(255,255,255,.5);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s var(--ease),height .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease);mix-blend-mode:difference}
@@ -573,9 +583,37 @@ footer .links{display:flex;gap:24px}
 </section>
 
 <footer>
-  <div class="brand"><span class="brand-dot"></span>&copy; 2026 VEXNODE LLC</div>
-  <div class="links">
-    <a href="mailto:contact@vexnode.net">contact@vexnode.net</a>
+  <div class="wrap">
+    <div class="col">
+      <h4>VEXNODE LLC</h4>
+      <p class="legal">
+        <strong>Mobile Application Development</strong>
+        Engineering the infrastructure for a world that demands speed, intelligence, and quality.
+      </p>
+    </div>
+    <div class="col">
+      <h4>Company</h4>
+      <a href="#about">About</a>
+      <a href="#approach">Approach</a>
+      <a href="#products">Products</a>
+      <a href="#principles">Principles</a>
+    </div>
+    <div class="col">
+      <h4>Legal</h4>
+      <p class="legal">
+        Identification Code: 405850066<br>
+        Registration: B26337541/3<br>
+        Tbilisi, Georgia<br><br>
+        <a href="mailto:contact@vexnode.net">contact@vexnode.net</a>
+      </p>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="brand"><span class="brand-dot"></span>&copy; 2026 VEXNODE LLC. All rights reserved.</div>
+    <div class="links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </div>
   </div>
 </footer>
 
