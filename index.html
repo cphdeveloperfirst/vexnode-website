@@ -85,6 +85,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .nav.scrolled{background:rgba(0,0,0,.6);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid var(--line)}
 .brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;letter-spacing:.22em;display:flex;align-items:center;gap:10px}
 .brand-dot{width:8px;height:8px;border-radius:50%;background:var(--grad);box-shadow:0 0 16px #8B5CF6}
+.brand-logo{height:34px;width:auto;display:block;filter:drop-shadow(0 0 12px rgba(139,92,246,.3))}
+.nav .brand{display:flex;align-items:center;gap:12px}
+.hero-logo{width:clamp(120px,16vw,200px);height:auto;margin:0 auto 32px;display:block;filter:drop-shadow(0 0 40px rgba(77,166,255,.4)) drop-shadow(0 0 80px rgba(139,92,246,.25));opacity:0;animation:fadeUp 1s var(--ease) .1s forwards;transform:translateY(20px)}
 .nav-links{display:flex;gap:36px;font-size:13.5px;color:var(--mute);font-weight:500}
 .nav-links a{transition:color .3s}
 .nav-links a:hover{color:#fff}
@@ -400,7 +403,7 @@ footer .bottom .links a:hover{color:#fff}
 <div class="cursor" id="cursor"></div>
 
 <nav class="nav" id="nav">
-  <a href="#" class="brand"><span class="brand-dot"></span>VEXNODE</a>
+  <a href="#" class="brand"><img class="brand-logo" src="logo-v.png" alt="VEXNODE">VEXNODE</a>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#approach">Approach</a>
@@ -412,6 +415,7 @@ footer .bottom .links a:hover{color:#fff}
 
 <section class="hero">
   <div class="hero-inner">
+    <img class="hero-logo" src="logo-v-large.png" alt="VEXNODE">
     <div class="hero-eyebrow"><span class="eyebrow">VEXNODE LLC</span></div>
     <h1>
       <span class="line">We Build</span>
